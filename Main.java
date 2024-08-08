@@ -21,6 +21,7 @@ public class Main {
     public static void main(String[] args) {
         setup();
         cookieAcceptance();
+        timeout(1000);
     }
 
     public static void cookieAcceptance() {
@@ -39,5 +40,11 @@ public class Main {
         driver = new FirefoxDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+    public static void timeout(int time) {
+        try {
+            Thread.sleep(time); //1s = 1000
+        } catch(Exception e) {
+        } 
     }
 }
